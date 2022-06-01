@@ -1,7 +1,11 @@
 import "./totalMoney.css";
 
 function TotalMoney({ list }) {
-  const totalValue = list.reduce((acc, cur) => acc + cur.value, 0);
+  const totalValue = list.reduce(
+    (acc, cur, index) =>
+      list[index].type === "entrada" ? acc + cur.value : acc - cur.value,
+    0
+  );
 
   return (
     <div className="balance-box">

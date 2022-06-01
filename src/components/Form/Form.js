@@ -30,6 +30,7 @@ function Form({ submitData }) {
             <label>Valor</label>
             <input
               type="number"
+              min={0}
               inputMode="decimal"
               className="value"
               value={valor}
